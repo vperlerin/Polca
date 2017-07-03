@@ -1,0 +1,101 @@
+<% include ./shared/header.ejs %>
+
+<% if(typeof success == 'undefined') { %>
+    <div class="form-s title text-center nmt">
+        <h3 class="nmt"><strong>Tentez de gagner votre paire de bouchons en silicone
+            <br/><em>(les réponses se trouvent sur notre stand)</em>
+        </h3>
+    </div>
+
+    <% if(typeof error !== 'undefined') { %>
+        <form method="POST" class="form-s form-inline text-center mt">
+           <div class="alert alert-mt">
+				<h3><span class="fa fa-warning"></span> <%= error %></h3>
+                 <a href="/" class="sub-like jump db"><span class="fa fa-home fa-4x"></span></a>
+			</div>
+        </form>
+                     
+    <% } else { %>
+        <form method="POST" class="form-s title  nmt">      
+                    <div id="q1" class="q">
+                        <span class="label label-polca">1/7</span>
+                        <div class="form-group">
+                            <label for="adh" class="control-label">Quel est le seuil de douleur pour l’oreille humaine ?</label>
+                           
+                           <div class="polcaradio clearfix">
+                                <div class="polcaradio-default inl">
+                                    <input type="radio" name="seuil_douleur" id="seuil_douleur1" />
+                                    <label for="seuil_douleur1">80db</label>
+                                </div>
+                                <div class="polcaradio-default inl">
+                                    <input type="radio" name="seuil_douleur" id="seuil_douleur2" />
+                                    <label for="seuil_douleur2">100db</label>
+                                </div>
+                                <div class="polcaradio-default inl">
+                                    <input type="radio" name="seuil_douleur" id="seuil_douleur3" />
+                                    <label for="seuil_douleur3">120db</label>
+                                </div>
+                                <div class="polcaradio-default inl">
+                                    <input type="radio" name="seuil_douleur" id="seuil_douleur4" />
+                                    <label for="seuil_douleur4">140db</label>
+                                </div>
+                           </div>
+                            
+                            <a href='#' class="btn btn-lg next short" data-cur="q1" data-rel="q2"><span class="fa fa-caret-square-o-right"></span></a>
+                        </div>
+                    </div>
+                    <div id="q2" class="q" style="display:none">
+                        <span class="label label-polca">2/3</span>
+                        <div class="form-group ">
+                            <label for="seuil" class="control-label">Quel est le seuil de douleur de l'oreille humaine en dB(A) ?</label>
+                            <div class="form-inline hmt">
+                                <a class="btn btn-lg next short f"  data-cur="q2" data-rel="q1"><span class="fa fa-caret-square-o-left"></span></a>    
+                                <input type="number" class="form-control input-lg auto" name="seuil"  autocomplete="off" size="4" id="seuil"/>
+                                <a class="btn btn-lg next short"  data-cur="q2" data-rel="q3"><span class="fa fa-caret-square-o-right"></span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="q3" class="q"  style="display:none">
+                        <span class="label label-polca">3/3</span>
+                        <div class="form-group">
+                            <label for="email" class="control-label">Entrez votre email pour recevoir votre lot si vous êtes tiré au sort parmi les bonnes réponses</label>
+                            <div class="form-inline hmt">
+                                <a class="btn btn-lg next short f"  data-cur="q3" data-rel="q2"><span class="fa fa-caret-square-o-left"></span></a>   
+                                <input type="email" class="form-control input-lg auto empt-ok f" required name="email" autocomplete="off" size="4" id="email"/>
+                                <button type="submit" class="btn btn-default btn-lg short"><span class="fa fa-check"></span></button>
+                            </div>
+                        </div>
+                    </div>
+                
+                   
+        </form>
+    <% } %>
+<% } else { %>
+                        <div class="form-s title text-center nmt">
+                            <div class="alert mt">
+                                <h3><span class="fa fa-thumbs-up"></span> <%= success %></strong></h3>
+                                <a href="/" class="sub-like jump db"><span class="fa fa-home fa-4x"></span></a>
+                            </div>
+                        </div>
+        <% } %>     
+<% include ./shared/footer.ejs %>
+<script>
+    $(function() {
+        $('#adh').focus();
+    
+        $('.next').click(function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            var $t = $(this);
+            var $c = $('#'+$t.attr('data-cur'));
+            if($c.find('input').val()!='' || $c.find('input').hasClass('empt-ok')) {
+                $c.fadeOut(100,function() {
+                    $('#'+$t.attr('data-rel')).fadeIn().find('input').focus();
+                });
+            } else {
+                $c.find('input').shake({speed:100});
+            }
+            return false;
+        });
+    });
+</script>

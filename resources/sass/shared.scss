@@ -1,0 +1,277 @@
+// Add custom font
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,700,300);
+$font-family-base: 'Raleway', sans-serif;
+
+// Import bootstrap and fontawesome
+@import "bootstrap";
+@import "font-awesome";
+
+// Mixins
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+@mixin transition($transition...) {
+    -moz-transition:    $transition;
+    -o-transition:      $transition;
+    -webkit-transition: $transition;
+    transition:         $transition;
+}
+
+@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+  @if $inset {
+    -webkit-box-shadow:inset $top $left $blur $color;
+    -moz-box-shadow:inset $top $left $blur $color;
+    box-shadow:inset $top $left $blur $color;
+  } @else {
+    -webkit-box-shadow: $top $left $blur $color;
+    -moz-box-shadow: $top $left $blur $color;
+    box-shadow: $top $left $blur $color;
+  }
+}
+ 
+ 
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 30px;
+  font-size:12px;
+  line-height:1;
+  text-align:center; 
+  color:#999; 
+  padding:10px 5px;
+  background-color: rgba(0,0,0,0.8); 
+}
+
+// Bootstrap Starter Template Styles
+body {
+  background-color: #121212; /*#e60002*/
+  background-image: url(/img/bg5.jpg);
+  color:#fff;
+  font-size:200%;
+  background-size:cover; 
+  background-attachment:fixed;
+  background-position:50% 50%;
+  @include transition(all .5s); 
+}
+
+#logo {
+    img {
+        margin-top:1em;
+        max-width:450px; 
+        width: 100%;  
+        padding: 2em;
+    }
+}
+
+.mauto {
+    margin:0 auto;    
+}
+
+.dmt {
+    margin-top:3em;   
+}
+
+.hmt {
+  margin-top:.5em!important;
+}
+
+.mt {
+  margin-top:1em!important;
+}
+
+.nmt {
+  margin-top:0!important;
+}
+
+.pr {
+  padding-right:.5em   
+}
+
+
+.db {
+  display:block;
+}
+ 
+.q {
+    display: flex;
+    flex-flow: row;
+} 
+
+.form-s {
+    max-width: 1000px;
+    margin: 2em auto;
+    background-color:rgba(0,0,0,.6);
+    padding: .5em 1em 1.5em;
+    border:1px solid #fff; 
+    display: flex;
+    flex-flow: row wrap; 
+
+    &.title {
+      padding: 1em 0 .5em;
+      margin-bottom: 1em;
+    }
+
+    h3, .alert  { 
+      flex:2 auto;
+    }
+}
+
+.label-polca {
+    color: #fff;
+    background-color: #e73538;
+    padding: 1em 2em;
+    border-radius: 0;
+    margin-right: 2em;
+    font-size: 110%;
+    margin: -.9em 2em -.45em 0;
+    position:relative; 
+}
+
+.sub-like {
+    color: #e73538;
+    text-shadow: 0 2px 0px #fff, 0 -3px 0px #fff, -3px 0px 0px #fff, 3px 0px 0px #fff;
+
+    &:hover, &:focus {
+      text-decoration:none;
+      color:#b80002;   
+      border-color:#d1d2d4;
+      @include box-shadow(2px, 2px, 8px, rgba(0,0,0,.6), true);
+    }
+}
+
+button[type=submit], a.next {    
+        margin:0 .5em;
+        font-weight:bolder;
+        color:#fff;
+        background-color:#e73538; 
+        border:1px solid #fff;  
+        @include transition(all .5s);
+        
+        &:hover, &:focus {
+            color:#f0f0f0;
+            text-decoration:none;
+            background-color:#b80002;   
+            border-color:#d1d2d4;
+            @include box-shadow(2px, 2px, 8px, rgba(0,0,0,.6), true);
+        }
+        
+       
+
+        &.short {
+            border: none;
+            font-size: 150%;
+            padding: .1em .5em;
+            margin-left:.5em;
+
+            &.f {
+              margin:0 .5em 0 0
+            }
+        }
+    
+}
+
+
+a.next {
+  margin-left:0;
+  border: none;
+  font-size: 150%;
+}
+
+#main-buttons {
+   display: flex;
+   align-items: flex-start;
+   justify-content: center; 
+   flex-direction: row;
+   flex-wrap: wrap;
+   flex-flow: row wrap;
+   align-content: flex-end;
+    
+     .col-but { 
+        width:33.33%;
+     }
+     
+     a { 
+        margin:0 0em .5em;
+        font-size:150%;
+        font-weight:bolder;
+        color:#fff;
+        background-color:rgba(0,0,0,.6);
+        display:block;
+        border:1px solid #fff;  
+        padding:.5em;
+        @include transition(all .5s);
+         margin:0 .5em .5em;
+        
+        &:hover, &:focus, &.active {
+            text-decoration:none;
+            background-color:#b80002;   
+            border-color:#d1d2d4;
+            @include box-shadow(2px, 2px, 8px, rgba(0,0,0,.6), true);
+        }
+     }
+     
+     span {
+          display:block;
+          margin:0 1em;
+          text-align:center
+     }
+}
+
+ 
+
+.input-lg {
+    padding:.5em;
+    min-width:22em;
+}
+
+
+.auto {
+  width:auto!important;
+}
+
+label, h3 {
+  em {
+    font-weight:normal;
+    color:#e73538;
+  }
+}
+
+input[type=text], input[type=number], input[type=email] {
+  text-align:center;
+}
+
+.alert {
+  position:relative;
+}
+
+.alert-dismissable .close, .alert-dismissible .close {
+    position: absolute;
+    top: 3px;
+    right: 5px;
+    color: inherit;
+}
+ 
+
+@media (max-width:1440px) {
+    #main-buttons {
+     a { 
+        font-size:150%;
+        margin:0 .5em .5em;
+     }
+     span {
+        font-size:100%;
+     }
+    }
+}

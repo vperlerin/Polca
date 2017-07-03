@@ -1,0 +1,29 @@
+<% include ./shared/header.ejs %>
+
+	<form method="POST" class="form-s form-inline text-center">
+		<% if(typeof error !== 'undefined') { %>
+			<div class="alert alert-mt">
+				<h3><span class="fa fa-warning"></span> <%= error %></h3>
+                 <a href="/" class="sub-like jump db"><span class="fa fa-home fa-4x"></span></a>
+			</div>
+		<% } else { %>
+
+            <% if(typeof success == 'undefined') { %>
+                <h3><strong>Abonnez-vous à la Newsletter du Polca en entrant votre email ci-dessous</strong></h3>
+                <div class="mauto mt">
+                    <div class="form-group"><input type="email" name="newsletter_email" class="form-control input-lg" autocomplete="off" required/></div>
+                    <button type="submit" class="btn btn-default btn-lg short"><span class="fa fa-send-o"></span></button>
+                </div>
+            <% } else { %>
+                <div class="alert mt">
+                    <h3><span class="fa fa-thumbs-up"></span> <%= success %></h3>
+                    <a href="/" class="sub-like jump db"><span class="fa fa-home fa-4x"></span></a>
+                </div>
+                
+            <% } %>
+
+		<% } %>
+		
+	</form>
+ 
+<% include ./shared/footer.ejs %>
