@@ -1,0 +1,44 @@
+npm install
+bower install
+
+1) Download 
+https://www.mongodb.com/dr/fastdl.mongodb.org/win32/mongodb-win32-x86_64-2008plus-ssl-3.4.5-signed.msi/download
+
+2) Install
+(here: D:\MongoDB\Server\3.4\)
+
+mkdir D:\mongodata\db
+mkdir D:\mongodata\log
+
+3) Chercher les Environment Variables et ajouter au PATH
+D:\MongoDB\Server\3.4\bin
+
+4) 
+Start Mongo Server
+mongod  --dbpath=D:\Development\projects\POLCA\polca\data
+
+5) 
+In a new Shell Window, connect to the DB
+mongo  
+
+Create Admin
+use admin
+ 
+mongo 
+use polca
+
+
+8) 
+Create Newletter collection
+db.createCollection("newsletter");
+db.newsletter.insert( { prenom:"PAUL", nom: "KA", email:"paul@ka.fr", "reg_date":"2017-05-30"} )
+
+TEST;
+db.newsletter.find().pretty()
+
+
+ 
+
+Or:
+newstuff = [{ "username" : "testuser2", "email" : "testuser2@testdomain.com", "dob": "1976-09-10", "reg_date":"2017-05-30" }, { "username" : "testuser3", "email" : "testuser3@testdomain.com" , "dob": "1976-09-10", "reg_date":"2017-05-30"}]
+db.usercollection.insert(newstuff);

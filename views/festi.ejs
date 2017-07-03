@@ -3,7 +3,7 @@
 <% if(typeof success == 'undefined') { %>
     <div class="form-s title text-center nmt">
         <h3 class="nmt"><strong>Tentez de gagner votre pass pour le prochain festival dans le région
-            <br/><em>(les réponses se trouvent sur notre stand)</em>
+            <br/><em>(la réponse se trouve sur notre stand)</em>
         </h3>
     </div>
 
@@ -16,34 +16,38 @@
         </form>
                      
     <% } else { %>
-        <form method="POST" class="form-s title  nmt">      
-                    <div id="q1" class="q">
-                        <span class="label label-polca">1/3</span>
-                        <div class="form-group">
-                            <label for="adh" class="control-label">Combien y a t-il d'adhérents au Polca ?</label>
-                            <div class="form-inline hmt">
-                                <input type="number" class="form-control input-lg auto" name="adh" autocomplete="off" size="4" id="adh"/>
-                                <a href='#' class="btn btn-lg next short" data-cur="q1" data-rel="q2"><span class="fa fa-caret-square-o-right"></span></a>
+        <form method="POST" class="form-s title  nmt">  
+                    <% if(typeof rand !== "undefined" && rand) { %>   
+                        <div id="q1" class="q">
+                            <span class="label label-polca">1/2</span>
+                            <div class="form-group">
+                                <label for="adh" class="control-label">Combien y a t-il d'adhérents au Polca ?</label>
+                                <div class="form-inline hmt">
+                                    <input type="number" class="form-control input-lg auto" name="adh" autocomplete="off" size="4" id="adh"/>
+                                    <a href='#' class="btn btn-lg next short" data-cur="q1" data-rel="q3"><span class="fa fa-caret-square-o-right"></span></a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div id="q2" class="q" style="display:none">
-                        <span class="label label-polca">2/3</span>
-                        <div class="form-group ">
-                            <label for="seuil" class="control-label">Quel est le seuil de douleur de l'oreille humaine en dB(A) ?</label>
-                            <div class="form-inline hmt">
-                                <a class="btn btn-lg next short f"  data-cur="q2" data-rel="q1"><span class="fa fa-caret-square-o-left"></span></a>    
-                                <input type="number" class="form-control input-lg auto" name="seuil"  autocomplete="off" size="4" id="seuil"/>
-                                <a class="btn btn-lg next short"  data-cur="q2" data-rel="q3"><span class="fa fa-caret-square-o-right"></span></a>
+                    <% } else { %>
+                        <div id="q1" class="q">
+                            <span class="label label-polca">1/2</span>
+                            <div class="form-group ">
+                                <label for="seuil" class="control-label">Quel est le seuil de douleur de l'oreille humaine en dB(A) ?</label>
+                                <div class="form-inline hmt">
+                                    <input type="number" class="form-control input-lg auto" name="seuil"  autocomplete="off" size="4" id="seuil"/>
+                                    <a class="btn btn-lg next short"  data-cur="q1" data-rel="q3"><span class="fa fa-caret-square-o-right"></span></a>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    <% } %>
+                    
+                    
                     <div id="q3" class="q"  style="display:none">
-                        <span class="label label-polca">3/3</span>
+                        <span class="label label-polca">2/2</span>
                         <div class="form-group">
                             <label for="email" class="control-label">Entrez votre email pour recevoir votre lot si vous êtes tiré au sort parmi les bonnes réponses</label>
                             <div class="form-inline hmt">
-                                <a class="btn btn-lg next short f"  data-cur="q3" data-rel="q2"><span class="fa fa-caret-square-o-left"></span></a>   
+                                <a class="btn btn-lg next short f"  data-cur="q3" data-rel="q1"><span class="fa fa-caret-square-o-left"></span></a>   
                                 <input type="email" class="form-control input-lg auto empt-ok f" required name="email" autocomplete="off" size="4" id="email"/>
                                 <button type="submit" class="btn btn-default btn-lg short"><span class="fa fa-check"></span></button>
                             </div>

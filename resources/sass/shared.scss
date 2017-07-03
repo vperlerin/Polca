@@ -57,7 +57,7 @@ body {
 // Bootstrap Starter Template Styles
 body {
   background-color: #121212; /*#e60002*/
-  background-image: url(/img/bg5.jpg);
+  /*background-image: url(/img/bg5.jpg);*/
   color:#fff;
   font-size:200%;
   background-size:cover; 
@@ -72,6 +72,13 @@ body {
         max-width:450px; 
         width: 100%;  
         padding: 2em;
+        @include transition(all .5s); 
+        
+        &.sml {
+            margin-top: 0;
+            padding-top: .5em;
+            max-width: 300px;
+        }
     }
 }
 
@@ -139,6 +146,14 @@ body {
     position:relative; 
 }
 
+label span {
+    color: #ffafaf;
+    /*
+    padding-right: .2em;
+    padding-left: .2em;
+    */
+}
+
 .sub-like {
     color: #e73538;
     text-shadow: 0 2px 0px #fff, 0 -3px 0px #fff, -3px 0px 0px #fff, 3px 0px 0px #fff;
@@ -147,7 +162,7 @@ body {
       text-decoration:none;
       color:#b80002;   
       border-color:#d1d2d4;
-      @include box-shadow(2px, 2px, 8px, rgba(0,0,0,.6), true);
+      /*@include box-shadow(2px, 2px, 8px, rgba(0,0,0,.6), true);*/
     }
 }
 
@@ -174,6 +189,14 @@ button[type=submit], a.next {
             font-size: 150%;
             padding: .1em .5em;
             margin-left:.5em;
+
+            span.lbl {
+                font-size: 65%;
+                line-height: 1.5em;
+                display: inline-block;
+                float: left;
+                margin: .3em .5em 0 0;
+            }
 
             &.f {
               margin:0 .5em 0 0

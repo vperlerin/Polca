@@ -15,6 +15,8 @@ exports.post =  function(req, res) {
     // Get our form values. These rely on the "name" attributes
     var userEmail = req.body.newsletter_email; 
 	var collection = db.get('newsletter');
+    
+	userEmail = userEmail.toLowerCase();
 
     if(validator.validate(userEmail)) {
  

@@ -20,53 +20,170 @@
                     <div id="q1" class="q">
                         <span class="label label-polca">1/7</span>
                         <div class="form-group">
-                            <label for="adh" class="control-label">Quel est le seuil de douleur pour l’oreille humaine ?</label>
+                           <label for="adh" class="control-label">Quel est le <span>seuil de douleur</span> pour l’oreille humaine ?</label>
                            
-                           <div class="polcaradio clearfix">
+                           <div class="polcaradio clearfix mt">
                                 <div class="polcaradio-default inl">
-                                    <input type="radio" name="seuil_douleur" id="seuil_douleur1" />
+                                    <input type="radio" name="seuil_douleur" id="seuil_douleur1" value="80" required/>
                                     <label for="seuil_douleur1">80db</label>
                                 </div>
                                 <div class="polcaradio-default inl">
-                                    <input type="radio" name="seuil_douleur" id="seuil_douleur2" />
+                                    <input type="radio" name="seuil_douleur" id="seuil_douleur2"  value="100" required/>
                                     <label for="seuil_douleur2">100db</label>
                                 </div>
                                 <div class="polcaradio-default inl">
-                                    <input type="radio" name="seuil_douleur" id="seuil_douleur3" />
+                                    <input type="radio" name="seuil_douleur" id="seuil_douleur3"  value="120" required/>
                                     <label for="seuil_douleur3">120db</label>
                                 </div>
                                 <div class="polcaradio-default inl">
-                                    <input type="radio" name="seuil_douleur" id="seuil_douleur4" />
+                                    <input type="radio" name="seuil_douleur" id="seuil_douleur4"  value="140" required/>
                                     <label for="seuil_douleur4">140db</label>
                                 </div>
                            </div>
                             
-                            <a href='#' class="btn btn-lg next short" data-cur="q1" data-rel="q2"><span class="fa fa-caret-square-o-right"></span></a>
+                            <a href='#' class="btn btn-lg next short f mt radio" data-cur="q1" data-rel="q2"><span class="lbl">Question Suivante</span> <span class="fa fa-caret-square-o-right"></span></a>
                         </div>
                     </div>
                     <div id="q2" class="q" style="display:none">
-                        <span class="label label-polca">2/3</span>
+                        <span class="label label-polca">2/7</span>
                         <div class="form-group ">
-                            <label for="seuil" class="control-label">Quel est le seuil de douleur de l'oreille humaine en dB(A) ?</label>
-                            <div class="form-inline hmt">
-                                <a class="btn btn-lg next short f"  data-cur="q2" data-rel="q1"><span class="fa fa-caret-square-o-left"></span></a>    
-                                <input type="number" class="form-control input-lg auto" name="seuil"  autocomplete="off" size="4" id="seuil"/>
-                                <a class="btn btn-lg next short"  data-cur="q2" data-rel="q3"><span class="fa fa-caret-square-o-right"></span></a>
-                            </div>
+                            <label for="seuil" class="control-label">Quel est le <span>seuil de danger</span> pour l’oreille humaine ?</label>
+                           <div class="polcaradio clearfix mt">
+                                <div class="polcaradio-default inl">
+                                    <input type="radio" name="seuil_danger" id="seuil_danger1" value="65"/>
+                                    <label for="seuil_danger1">65db</label>
+                                </div>
+                                <div class="polcaradio-default inl">
+                                    <input type="radio" name="seuil_danger" id="seuil_danger2"  value="85"/>
+                                    <label for="seuil_danger2">85db</label>
+                                </div>
+                                <div class="polcaradio-default inl">
+                                    <input type="radio" name="seuil_danger" id="seuil_danger3"  value="105"/>
+                                    <label for="seuil_danger3">105db</label>
+                                </div>
+                                <div class="polcaradio-default inl">
+                                    <input type="radio" name="seuil_danger" id="seuil_danger4"  value="125"/>
+                                    <label for="seuil_danger4">125db</label>
+                                </div>
+                           </div>
+                            <a href='#' class="btn btn-lg next short f mt radio" data-cur="q2" data-rel="q1"><span class="fa fa-caret-square-o-left"></span></a>
+                           <a href='#' class="btn btn-lg next short f mt radio" data-cur="q2" data-rel="q3"><span class="lbl">Question Suivante</span> <span class="fa fa-caret-square-o-right"></span></a>
                         </div>
                     </div>
-                    <div id="q3" class="q"  style="display:none">
-                        <span class="label label-polca">3/3</span>
+                    
+                    
+                    <div id="q3" class="q" style="display:none">
+                        <span class="label label-polca">3/7</span>
+                        <div class="form-group ">
+                            <label for="seuil" class="control-label">Pour une écoute sans risque, combien de <span>temps</span> pouvez-vous <span>écouter à puissance maximale votre baladeur</span> par semaine ?
+</label>
+                           <div class="polcaradio clearfix mt">
+                                <div class="polcaradio-default inl">
+                                    <input type="radio" name="duree" id="duree1" value="1"/>
+                                    <label for="duree1">65db</label>
+                                </div>
+                                <div class="polcaradio-default inl">
+                                    <input type="radio" name="duree" id="duree2"  value="2"/>
+                                    <label for="duree2">85db</label>
+                                </div>
+                                <div class="polcaradio-default inl">
+                                    <input type="radio" name="duree" id="duree3"  value="3"/>
+                                    <label for="duree3">105db</label>
+                                </div>
+                                <div class="polcaradio-default inl">
+                                    <input type="radio" name="duree" id="duree4"  value="4"/>
+                                    <label for="duree4">125db</label>
+                                </div>
+                           </div>
+                           <a href='#' class="btn btn-lg next short f mt radio" data-cur="q3" data-rel="q2"><span class="fa fa-caret-square-o-left"></span></a>
+                           <a href='#' class="btn btn-lg next short f mt radio" data-cur="q3" data-rel="q4"><span class="lbl">Question Suivante</span> <span class="fa fa-caret-square-o-right"></span></a>
+                        </div>
+                    </div>
+                    
+                     <div id="q4" class="q" style="display:none">
+                        <span class="label label-polca">4/7</span>
+                        <div class="form-group ">
+                            <label for="seuil" class="control-label">En cas de gêne auditive suite à <span>l’exposition prolongée à un fort volume sonore</span>, de combien de <span>temps</span> disposez-vous pour <span>consulter un médecin</span> ?</label>
+                           <div class="polcaradio clearfix mt">
+                                <div class="polcaradio-default inl">
+                                    <input type="radio" name="duree2" id="duree21" value="24"/>
+                                    <label for="duree21">24h</label>
+                                </div>
+                                <div class="polcaradio-default inl">
+                                    <input type="radio" name="duree2" id="duree22"  value="48"/>
+                                    <label for="duree22">48h</label>
+                                </div>
+                                <div class="polcaradio-default inl">
+                                    <input type="radio" name="duree2" id="duree23"  value="72"/>
+                                    <label for="duree23">72h</label>
+                                </div>
+                                <div class="polcaradio-default inl">
+                                    <input type="radio" name="duree2" id="duree24"  value="96"/>
+                                    <label for="duree24">96h</label>
+                                </div>
+                           </div>
+                           <a href='#' class="btn btn-lg next short f mt radio" data-cur="q4" data-rel="q3"><span class="fa fa-caret-square-o-left"></span></a>
+                           <a href='#' class="btn btn-lg next short f mt radio" data-cur="q4" data-rel="q5"><span class="lbl">Question Suivante</span> <span class="fa fa-caret-square-o-right"></span></a>
+                        </div>
+                    </div>
+                    
+                    
+                     <div id="q5" class="q" style="display:none">
+                        <span class="label label-polca">5/7</span>
+                        <div class="form-group ">
+                            <label for="seuil" class="control-label">Qu’est-ce que la dose de son quotidienne ?</label>
+                           <div class="polcaradio clearfix mt">
+                                <div class="polcaradio-default">
+                                    <input type="radio" name="dose" id="dose1" value="volume"/>
+                                    <label for="dose1">Le volume auquel on est confronté.</label>
+                                </div>
+                                <div class="polcaradio-default">
+                                    <input type="radio" name="dose" id="dose2" value="temps"/>
+                                    <label for="dose2">Le temps d’exposition à une source sonore.</label>
+                                </div>
+                                <div class="polcaradio-default">
+                                    <input type="radio" name="dose" id="dose3" value="multi"/>
+                                    <label for="dose3">Le volume sonore multiplié par le temps d’exposition.</label>
+                                </div> 
+                           </div>
+                           <a href='#' class="btn btn-lg next short f mt radio" data-cur="q5" data-rel="q4"><span class="fa fa-caret-square-o-left"></span></a>
+                           <a href='#' class="btn btn-lg next short f mt radio" data-cur="q5" data-rel="q6"><span class="lbl">Question Suivante</span> <span class="fa fa-caret-square-o-right"></span></a>
+                        </div>
+                    </div>      
+                    
+                    
+                    <div id="q6" class="q" style="display:none">
+                        <span class="label label-polca">6/7</span>
+                        <div class="form-group ">
+                            <label for="seuil" class="control-label"><span>À intensité égale</span>, un son choisi présente le même risque qu’un son <span>subi</span>.</label>
+                           <div class="polcaradio clearfix mt">
+                                <div class="polcaradio-default inl">
+                                    <input type="radio" name="subi" id="subi1" value="1"/>
+                                    <label for="subi1">Oui</label>
+                                </div>
+                                <div class="polcaradio-default inl">
+                                    <input type="radio" name="subi" id="subi2"  value="2"/>
+                                    <label for="subi2">Non</label>
+                                </div> 
+                           </div>
+                           <a href='#' class="btn btn-lg next short f mt radio" data-cur="q6" data-rel="q5"><span class="fa fa-caret-square-o-left"></span></a>
+                           <a href='#' class="btn btn-lg next short f mt radio" data-cur="q6" data-rel="q7"><span class="lbl">Question Suivante</span> <span class="fa fa-caret-square-o-right"></span></a>
+                        </div>
+                    </div>
+                                  
+                  
+                    <div id="q7" class="q"  style="display:none">
+                        <span class="label label-polca">7/7</span>
                         <div class="form-group">
                             <label for="email" class="control-label">Entrez votre email pour recevoir votre lot si vous êtes tiré au sort parmi les bonnes réponses</label>
                             <div class="form-inline hmt">
-                                <a class="btn btn-lg next short f"  data-cur="q3" data-rel="q2"><span class="fa fa-caret-square-o-left"></span></a>   
+                                <a class="btn btn-lg next short f"  data-cur="q7" data-rel="q6"><span class="fa fa-caret-square-o-left"></span></a>   
                                 <input type="email" class="form-control input-lg auto empt-ok f" required name="email" autocomplete="off" size="4" id="email"/>
                                 <button type="submit" class="btn btn-default btn-lg short"><span class="fa fa-check"></span></button>
                             </div>
                         </div>
                     </div>
-                
+                   
                    
         </form>
     <% } %>
@@ -88,12 +205,31 @@
             e.stopPropagation();
             var $t = $(this);
             var $c = $('#'+$t.attr('data-cur'));
-            if($c.find('input').val()!='' || $c.find('input').hasClass('empt-ok')) {
-                $c.fadeOut(100,function() {
-                    $('#'+$t.attr('data-rel')).fadeIn().find('input').focus();
-                });
+            
+             
+            if($t.attr('data-rel')==='q5') {
+                $('#logo img').addClass('sml');
             } else {
-                $c.find('input').shake({speed:100});
+                $('#logo img').removeClass('sml');
+            }
+            
+            if($t.hasClass('radio')) {
+                if($c.find('input[type=radio]:checked').length>0) {
+                    $c.fadeOut(100,function() {
+                        $('#'+$t.attr('data-rel')).fadeIn().find('input').focus();
+                    });
+                 } else {
+                    $c.find('.polcaradio-default').shake({speed:100});
+                }
+
+            } else {
+                if($c.find('input').val()!='' || $c.find('input').hasClass('empt-ok')) {
+                    $c.fadeOut(100,function() {
+                        $('#'+$t.attr('data-rel')).fadeIn().find('input').focus();
+                    });
+                } else {
+                    $c.find('input').shake({speed:100});
+                }
             }
             return false;
         });

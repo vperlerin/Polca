@@ -1,6 +1,6 @@
 .polcaradio {
     
-    margin-bottom:1.5em;
+    margin-bottom:.5em;
     
     div {
         clear: both;
@@ -61,7 +61,7 @@
             color: #888;
 
             &:before {
-                content: '\f00c';
+                content: '\f00c'; 
                 text-indent: .9em;
                 color: #C2C2C2;
                 padding-top: .7em;
@@ -70,13 +70,13 @@
         }
 
         &:checked ~ label {
-            color: #777;
+            color: #999;
 
             &:before {
                 content: '\f00c';
                 text-indent: .9em;
-                color: #333;
-                background-color: #ccc;
+                color: #e73538;
+                background-color: #fff;
                 padding-top: .7em;
                 font-size: 1em;
             }
@@ -91,8 +91,8 @@
         input[type="radio"],
         input[type="checkbox"] {
             &:checked ~ label:before {
-                color: #333;
-                background-color: #ccc;
+                    color: #e73538;
+                    background-color: #fff;
             }
         }
     }

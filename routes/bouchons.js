@@ -12,15 +12,13 @@ exports.load =  function(req, res) {
 exports.post =  function(req, res) { 
  
 	// Set our internal DB variable
-    var db = req.db;
-
-    // Get our form values. These rely on the "name" attributes
-    var adherents = req.body.adh; 
-    var seuil = req.body.seuil; 
-    var email = req.body.email; 
-     
-	var collection = db.get('concour_pass');
-
+    var db = req.db; 
+    
+    var email   = req.body.email; 
+    var collection = db.get('concour_bouchon');
+    
+    email = email.toLowerCase();
+ 
     if(validator.validate(email)) {
  
 	    collection.findOne({email : email}, function(err, user) { 
@@ -29,8 +27,12 @@ exports.post =  function(req, res) {
 	    		// We add it
 	    		collection.insert({
 					"email" 	: email,
-                    "seuil"     : seuil,
-                    "adherents" : adherents,
+                    "seuil_douleur"     :  req.body.seuil_douleur,
+                    "duree_balladeur"   :  req.body.duree,
+                    "duree_medecin"     :  req.body.duree2,
+                    "dose"              :  req.body.dose,
+                    "subi"              :  req.body.subi,
+                    "seuil_danger"     :  req.body.seuil_danger,
                     "reg_date"  : date.getDate()
 	    		}, function (err, doc) { 
 
@@ -49,4 +51,5 @@ exports.post =  function(req, res) {
     } else {
 		res.render('bouchons',{'error':'Entrez une adresse email valide.'});
     } 
+   
 }
