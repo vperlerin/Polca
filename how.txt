@@ -17,6 +17,11 @@ D:\MongoDB\Server\3.4\bin
 Start Mongo Server
 mongod  --dbpath=D:\Development\projects\POLCA\polca\data
 
+
+mongod --storageEngine=mmapv1 --dbpath=C:\Polca\data
+
+
+
 5) 
 In a new Shell Window, connect to the DB
 mongo  

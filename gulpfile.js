@@ -42,8 +42,9 @@ gulp.task('css', function() {
                  config.bowerDir + '/fontawesome/scss',
                  "resources/sass/checkboxes.scss",
                  "resources/sass/shared.scss", 
-                
-             ]
+                 "resources/sass/pace.scss",
+                 "resources/sass/spin.scss", 
+              ]
          }) 
          .on("error", notify.onError(function (error) {
                  return "Error: " + error.message;
