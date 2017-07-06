@@ -7,9 +7,8 @@ $(function() {
     $('#year').text(new Date().getFullYear());  
     
     // Slidedown effect
-    setTimeout(function() {
-        $('#page').slideDown(150);
-    }, 500);
+    $('#page').slideDown(150);
+    
     
     // Load next page
     $('a.jump').click(function() {
