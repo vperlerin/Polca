@@ -66,7 +66,7 @@
                                     <label for="seuil_danger4">125db</label>
                                 </div>
                            </div>
-                            <a href='#' class="btn btn-lg next short f mt radio" data-cur="q2" data-rel="q1"><span class="fa fa-caret-square-o-left"></span></a>
+                            <a href='#' class="btn btn-lg next short f mt radio empt-ok" data-cur="q2" data-rel="q1"><span class="fa fa-caret-square-o-left"></span></a>
                            <a href='#' class="btn btn-lg next short f mt radio" data-cur="q2" data-rel="q3"><span class="lbl">Question Suivante</span> <span class="fa fa-caret-square-o-right"></span></a>
                         </div>
                     </div>
@@ -80,22 +80,22 @@
                            <div class="polcaradio clearfix mt">
                                 <div class="polcaradio-default inl">
                                     <input type="radio" name="duree" id="duree1" value="1"/>
-                                    <label for="duree1">65db</label>
+                                    <label for="duree1">1h</label>
                                 </div>
                                 <div class="polcaradio-default inl">
                                     <input type="radio" name="duree" id="duree2"  value="2"/>
-                                    <label for="duree2">85db</label>
+                                    <label for="duree2">2h</label>
                                 </div>
                                 <div class="polcaradio-default inl">
                                     <input type="radio" name="duree" id="duree3"  value="3"/>
-                                    <label for="duree3">105db</label>
+                                    <label for="duree3">3h</label>
                                 </div>
                                 <div class="polcaradio-default inl">
                                     <input type="radio" name="duree" id="duree4"  value="4"/>
-                                    <label for="duree4">125db</label>
+                                    <label for="duree4">4h</label>
                                 </div>
                            </div>
-                           <a href='#' class="btn btn-lg next short f mt radio" data-cur="q3" data-rel="q2"><span class="fa fa-caret-square-o-left"></span></a>
+                           <a href='#' class="btn btn-lg next short f mt radio empt-ok" data-cur="q3" data-rel="q2"><span class="fa fa-caret-square-o-left"></span></a>
                            <a href='#' class="btn btn-lg next short f mt radio" data-cur="q3" data-rel="q4"><span class="lbl">Question Suivante</span> <span class="fa fa-caret-square-o-right"></span></a>
                         </div>
                     </div>
@@ -122,7 +122,7 @@
                                     <label for="duree24">96h</label>
                                 </div>
                            </div>
-                           <a href='#' class="btn btn-lg next short f mt radio" data-cur="q4" data-rel="q3"><span class="fa fa-caret-square-o-left"></span></a>
+                           <a href='#' class="btn btn-lg next short f mt radio empt-ok" data-cur="q4" data-rel="q3"><span class="fa fa-caret-square-o-left"></span></a>
                            <a href='#' class="btn btn-lg next short f mt radio" data-cur="q4" data-rel="q5"><span class="lbl">Question Suivante</span> <span class="fa fa-caret-square-o-right"></span></a>
                         </div>
                     </div>
@@ -146,7 +146,7 @@
                                     <label for="dose3">Le volume sonore multiplié par le temps d’exposition.</label>
                                 </div> 
                            </div>
-                           <a href='#' class="btn btn-lg next short f mt radio" data-cur="q5" data-rel="q4"><span class="fa fa-caret-square-o-left"></span></a>
+                           <a href='#' class="btn btn-lg next short f mt radio empt-ok" data-cur="q5" data-rel="q4"><span class="fa fa-caret-square-o-left"></span></a>
                            <a href='#' class="btn btn-lg next short f mt radio" data-cur="q5" data-rel="q6"><span class="lbl">Question Suivante</span> <span class="fa fa-caret-square-o-right"></span></a>
                         </div>
                     </div>      
@@ -166,7 +166,7 @@
                                     <label for="subi2">Non</label>
                                 </div> 
                            </div>
-                           <a href='#' class="btn btn-lg next short f mt radio" data-cur="q6" data-rel="q5"><span class="fa fa-caret-square-o-left"></span></a>
+                           <a href='#' class="btn btn-lg next short f mt radio empt-ok" data-cur="q6" data-rel="q5"><span class="fa fa-caret-square-o-left"></span></a>
                            <a href='#' class="btn btn-lg next short f mt radio" data-cur="q6" data-rel="q7"><span class="lbl">Question Suivante</span> <span class="fa fa-caret-square-o-right"></span></a>
                         </div>
                     </div>
@@ -214,7 +214,7 @@
             }
             
             if($t.hasClass('radio')) {
-                if($c.find('input[type=radio]:checked').length>0) {
+                if($c.find('input[type=radio]:checked').length>0 || $t.hasClass('empt-ok')) {
                     $c.fadeOut(100,function() {
                         $('#'+$t.attr('data-rel')).fadeIn().find('input').focus();
                     });

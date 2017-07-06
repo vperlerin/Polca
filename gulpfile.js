@@ -4,12 +4,14 @@ var gulp    = require('gulp'),
     bower   = require('gulp-bower'),
     uglify  = require('gulp-uglify'),
     concat = require('gulp-concat'), 
+    imagemin = require('gulp-imagemin'),
     rename = require('gulp-rename');  
 
 var config = {
      sassPath: './resources/sass',
      bowerDir: './bower_components',
-     jsPath:'./resources/js'
+     jsPath:'./resources/js',
+     imgPath:'./resources/img'
 }
 
 gulp.task('bower', function() { 
@@ -21,6 +23,14 @@ gulp.task('icons', function() {
     return gulp.src(config.bowerDir + '/fontawesome/fonts/**.*') 
         .pipe(gulp.dest('./public/fonts')); 
 });
+
+
+gulp.task('images', function() { 
+    return gulp.src(config.imgPath + '/*')
+        .pipe(imagemin())
+        .pipe(gulp.dest('./public/img')); 
+});
+
 
 gulp.task('css', function() { 
     return gulp.src(config.sassPath + '/*.scss')
@@ -63,6 +73,8 @@ gulp.task('js', function() {
 gulp.task('watch', function() {
      gulp.watch(config.sassPath + '/**/*.scss', ['css']); 
      gulp.watch(config.jsPath + '/**/*.js', ['js']); 
+     gulp.watch(config.imgPath + '*', ['images']); 
+
 });
 
-gulp.task('default', ['bower', 'icons', 'css','js']);
+gulp.task('default', ['bower', 'icons', 'css','js','images']);

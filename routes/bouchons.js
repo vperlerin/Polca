@@ -18,12 +18,12 @@ exports.post =  function(req, res) {
     var collection = db.get('concour_bouchon');
     
     email = email.toLowerCase();
- 
+  
     if(validator.validate(email)) {
  
 	    collection.findOne({email : email}, function(err, user) { 
 	    	if (!user) {  
-
+                 
 	    		// We add it
 	    		collection.insert({
 					"email" 	: email,
@@ -32,8 +32,8 @@ exports.post =  function(req, res) {
                     "duree_medecin"     :  req.body.duree2,
                     "dose"              :  req.body.dose,
                     "subi"              :  req.body.subi,
-                    "seuil_danger"     :  req.body.seuil_danger,
-                    "reg_date"  : date.getDate()
+                    "seuil_danger"      :  req.body.seuil_danger,
+                    "reg_date"           : date.getDate()
 	    		}, function (err, doc) { 
 
 					if (err) {

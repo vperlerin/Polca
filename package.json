@@ -19,7 +19,8 @@
     "morgan": "~1.7.0",
     "serve-favicon": "~2.3.2",
     "express-minify-html": "^0.11.3",
-    "email-validator":"^1.0.7"
+    "email-validator":"^1.0.7",
+    "express-json2csv":"0.3.6"
   },
   "devDependencies": {
     "gulp": "^3.8.11",
@@ -28,6 +29,7 @@
     "gulp-ruby-sass": "^0.7.1",
     "gulp-minify": "~1.0.0",
     "gulp-concat":"~2.6.1",
-    "gulp-uglify":"~3.0.0" 
+    "gulp-uglify":"~3.0.0",
+    "gulp-imagemin":"~3.3.0"
   }
 }
