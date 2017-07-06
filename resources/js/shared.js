@@ -1,7 +1,3 @@
-window.onbeforeunload = function(e) {
-    $('#logo').addClass('rubberBand animated');
-};
-
 $(function() {
      
     // Flashee on Homepage
